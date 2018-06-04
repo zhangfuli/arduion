@@ -32,9 +32,10 @@ void setup(){
  
 }
 void loop(){
-  while(Serial1.available()){
+  while(Serial1.available() && rec.length()<7){
     rec += char(Serial1.read());
     delay(2);    
+   // while(Serial1.available()){}
   }
   if(rec.length()>0){
     Serial.println(rec);
@@ -45,7 +46,13 @@ void loop(){
     }else if(rec == "office2"){
       digitalWrite(office2Light,HIGH);
       rotating();
-   }
+   }else if(rec == "offic12"){
+     digitalWrite(office2Light,HIGH);
+     digitalWrite(office1Light,HIGH);
+     startFan();
+     rotating();
+    }
+  
     rec = "";
       
   }
