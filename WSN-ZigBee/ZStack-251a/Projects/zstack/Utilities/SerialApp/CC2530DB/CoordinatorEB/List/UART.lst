@@ -1,0 +1,345 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         03/Jun/2018  11:42:08 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  D:\安连德\第6章 实践项目\WSN-ZigBee\ZStack-251a\Pr #
+#                          ojects\zstack\Utilities\SerialApp\Source\UART.c    #
+#    Command line       =  -f "D:\安连德\第6章 实践项目\WSN-ZigBee\ZStack-251 #
+#                          a\Projects\zstack\Utilities\SerialApp\CC2530DB\..\ #
+#                          ..\..\Tools\CC2530DB\f8wCoord.cfg" (-DCPU32MHZ     #
+#                          -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRU #
+#                          E -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8       #
+#                          -DMAC_CFG_RX_MAX=5 -DZDO_COORDINATOR -DRTR_NWK)    #
+#                          -f "D:\安连德\第6章 实践项目\WSN-ZigBee\ZStack-251 #
+#                          a\Projects\zstack\Utilities\SerialApp\CC2530DB\..\ #
+#                          ..\..\Tools\CC2530DB\f8wConfig.cfg" (-DZIGBEEPRO   #
+#                          -DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR       #
+#                          -DDEFAULT_CHANLIST=0x02000000                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0x1688                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "D:\安连德\第6章            #
+#                          实践项目\WSN-ZigBee\ZStack-251a\Projects\zstack\Ut #
+#                          ilities\SerialApp\Source\UART.c" -D HAL_UART=TRUE  #
+#                          -D SERIAL_APP_PORT=0 -D LCD_SUPPORTED -lC          #
+#                          "D:\安连德\第6章 实践项目\WSN-ZigBee\ZStack-251a\P #
+#                          rojects\zstack\Utilities\SerialApp\CC2530DB\Coordi #
+#                          natorEB\List\" -lA "D:\安连德\第6章                #
+#                          实践项目\WSN-ZigBee\ZStack-251a\Projects\zstack\Ut #
+#                          ilities\SerialApp\CC2530DB\CoordinatorEB\List\"    #
+#                          --diag_suppress Pe001,Pa010 -o "D:\安连德\第6章    #
+#                          实践项目\WSN-ZigBee\ZStack-251a\Projects\zstack\Ut #
+#                          ilities\SerialApp\CC2530DB\CoordinatorEB\Obj\" -e  #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I "D:\安连德\第6章 实践项目\WSN-ZigBee\ZStack-251 #
+#                          a\Projects\zstack\Utilities\SerialApp\CC2530DB\"   #
+#                          -I "D:\安连德\第6章 实践项目\WSN-ZigBee\ZStack-251 #
+#                          a\Projects\zstack\Utilities\SerialApp\CC2530DB\..\ #
+#                          Source\" -I "D:\安连德\第6章                       #
+#                          实践项目\WSN-ZigBee\ZStack-251a\Projects\zstack\Ut #
+#                          ilities\SerialApp\CC2530DB\..\..\..\ZMain\TI2530DB #
+#                          \" -I "D:\安连德\第6章 实践项目\WSN-ZigBee\ZStack- #
+#                          251a\Projects\zstack\Utilities\SerialApp\CC2530DB\ #
+#                          ..\..\..\..\..\Components\hal\include\" -I         #
+#                          "D:\安连德\第6章 实践项目\WSN-ZigBee\ZStack-251a\P #
+#                          rojects\zstack\Utilities\SerialApp\CC2530DB\..\..\ #
+#                          ..\..\..\Components\hal\target\CC2530EB\" -I       #
+#                          "D:\安连德\第6章 实践项目\WSN-ZigBee\ZStack-251a\P #
+#                          rojects\zstack\Utilities\SerialApp\CC2530DB\..\..\ #
+#                          ..\..\..\Components\mac\include\" -I               #
+#                          "D:\安连德\第6章 实践项目\WSN-ZigBee\ZStack-251a\P #
+#                          rojects\zstack\Utilities\SerialApp\CC2530DB\..\..\ #
+#                          ..\..\..\Components\mac\high_level\" -I            #
+#                          "D:\安连德\第6章 实践项目\WSN-ZigBee\ZStack-251a\P #
+#                          rojects\zstack\Utilities\SerialApp\CC2530DB\..\..\ #
+#                          ..\..\..\Components\mac\low_level\srf04\" -I       #
+#                          "D:\安连德\第6章 实践项目\WSN-ZigBee\ZStack-251a\P #
+#                          rojects\zstack\Utilities\SerialApp\CC2530DB\..\..\ #
+#                          ..\..\..\Components\mac\low_level\srf04\single_chi #
+#                          p\" -I "D:\安连德\第6章 实践项目\WSN-ZigBee\ZStack #
+#                          -251a\Projects\zstack\Utilities\SerialApp\CC2530DB #
+#                          \..\..\..\..\..\Components\mt\" -I                 #
+#                          "D:\安连德\第6章 实践项目\WSN-ZigBee\ZStack-251a\P #
+#                          rojects\zstack\Utilities\SerialApp\CC2530DB\..\..\ #
+#                          ..\..\..\Components\osal\include\" -I              #
+#                          "D:\安连德\第6章 实践项目\WSN-ZigBee\ZStack-251a\P #
+#                          rojects\zstack\Utilities\SerialApp\CC2530DB\..\..\ #
+#                          ..\..\..\Components\services\saddr\" -I            #
+#                          "D:\安连德\第6章 实践项目\WSN-ZigBee\ZStack-251a\P #
+#                          rojects\zstack\Utilities\SerialApp\CC2530DB\..\..\ #
+#                          ..\..\..\Components\services\sdata\" -I            #
+#                          "D:\安连德\第6章 实践项目\WSN-ZigBee\ZStack-251a\P #
+#                          rojects\zstack\Utilities\SerialApp\CC2530DB\..\..\ #
+#                          ..\..\..\Components\stack\af\" -I                  #
+#                          "D:\安连德\第6章 实践项目\WSN-ZigBee\ZStack-251a\P #
+#                          rojects\zstack\Utilities\SerialApp\CC2530DB\..\..\ #
+#                          ..\..\..\Components\stack\nwk\" -I                 #
+#                          "D:\安连德\第6章 实践项目\WSN-ZigBee\ZStack-251a\P #
+#                          rojects\zstack\Utilities\SerialApp\CC2530DB\..\..\ #
+#                          ..\..\..\Components\stack\sapi\" -I                #
+#                          "D:\安连德\第6章 实践项目\WSN-ZigBee\ZStack-251a\P #
+#                          rojects\zstack\Utilities\SerialApp\CC2530DB\..\..\ #
+#                          ..\..\..\Components\stack\sec\" -I                 #
+#                          "D:\安连德\第6章 实践项目\WSN-ZigBee\ZStack-251a\P #
+#                          rojects\zstack\Utilities\SerialApp\CC2530DB\..\..\ #
+#                          ..\..\..\Components\stack\sys\" -I                 #
+#                          "D:\安连德\第6章 实践项目\WSN-ZigBee\ZStack-251a\P #
+#                          rojects\zstack\Utilities\SerialApp\CC2530DB\..\..\ #
+#                          ..\..\..\Components\stack\zdo\" -I                 #
+#                          "D:\安连德\第6章 实践项目\WSN-ZigBee\ZStack-251a\P #
+#                          rojects\zstack\Utilities\SerialApp\CC2530DB\..\..\ #
+#                          ..\..\..\Components\zmac\" -I "D:\安连德\第6章     #
+#                          实践项目\WSN-ZigBee\ZStack-251a\Projects\zstack\Ut #
+#                          ilities\SerialApp\CC2530DB\..\..\..\..\..\Componen #
+#                          ts\zmac\f8w\" -Ohz                                 #
+#    List file          =  D:\安连德\第6章 实践项目\WSN-ZigBee\ZStack-251a\Pr #
+#                          ojects\zstack\Utilities\SerialApp\CC2530DB\Coordin #
+#                          atorEB\List\UART.lst                               #
+#    Object file        =  D:\安连德\第6章 实践项目\WSN-ZigBee\ZStack-251a\Pr #
+#                          ojects\zstack\Utilities\SerialApp\CC2530DB\Coordin #
+#                          atorEB\Obj\UART.r51                                #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\安连德\第6章 实践项目\WSN-ZigBee\ZStack-251a\Projects\zstack\Utilities\SerialApp\Source\UART.c
+      1          #include"ioCC2530.h"
+
+   \                                 In  segment SFR_AN, at 0x86
+   \   unsigned char volatile __sfr U0CSR
+   \                     U0CSR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xc1
+   \   unsigned char volatile __sfr U0DBUF
+   \                     U0DBUF:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xc2
+   \   unsigned char volatile __sfr U0BAUD
+   \                     U0BAUD:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xc5
+   \   unsigned char volatile __sfr U0GCR
+   \                     U0GCR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xe8
+   \   union <unnamed> volatile __sfr _A_IRCON2
+   \                     _A_IRCON2:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf1
+   \   unsigned char volatile __sfr PERCFG
+   \                     PERCFG:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf3
+   \   unsigned char volatile __sfr P0SEL
+   \                     P0SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xff
+   \   unsigned char volatile __sfr P2DIR
+   \                     P2DIR:
+   \   000000                DS 1
+      2          #include"variable.h"
+      3          
+      4          //115200 8N1
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+      5          void UartInitial()
+   \                     UartInitial:
+      6          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+      7            PERCFG = 0x00;
+   \   000000   75F100       MOV     0xf1,#0x0
+      8            P0SEL = 0x0c;
+   \   000003   75F30C       MOV     0xf3,#0xc
+      9            P2DIR &= ~0xc0;
+   \   000006   53FF3F       ANL     0xff,#0x3f
+     10             U0CSR |= 0x80;//设置串口
+   \   000009   438680       ORL     0x86,#0x80
+     11           // U0UCR = 0x00;
+     12            U0GCR |= 11;
+   \   00000C   43C50B       ORL     0xc5,#0xb
+     13            U0BAUD |= 216;
+   \   00000F   43C2D8       ORL     0xc2,#0xd8
+     14            U0CSR |= 0x40;
+   \   000012   438640       ORL     0x86,#0x40
+     15            UTX0IF = 0;
+   \   000015                REQUIRE ?Subroutine0
+   \   000015                REQUIRE PERCFG
+   \   000015                REQUIRE P0SEL
+   \   000015                REQUIRE P2DIR
+   \   000015                REQUIRE U0CSR
+   \   000015                REQUIRE U0GCR
+   \   000015                REQUIRE U0BAUD
+   \   000015                REQUIRE _A_IRCON2
+   \   000015                ; // Fall through to label ?Subroutine0
+     16            
+     17          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   C2E9         CLR     0xe8.1
+   \   000002   02....       LJMP    ?BRET
+     18          
+     19          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     20          void UartSend(uchar infor)
+   \                     UartSend:
+     21          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     22            U0DBUF = infor;
+   \   000000   89C1         MOV     0xc1,R1
+     23            while(UTX0IF == 0);
+   \                     ??UartSend_0:
+   \   000002   A2E9         MOV     C,0xe8.1
+   \   000004   50FC         JNC     ??UartSend_0
+     24            UTX0IF = 0;
+   \   000006   80..         SJMP    ?Subroutine0
+   \   000008                REQUIRE U0DBUF
+   \   000008                REQUIRE _A_IRCON2
+     25          }
+     26          
+     27          //串口发送字符串函数			
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     28          void UartSend_String(char *Data,int len)
+   \                     UartSend_String:
+     29          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+     30            int j;
+     31            for(j=0;j<len;j++)
+   \   000005   7800         MOV     R0,#0x0
+   \   000007   7900         MOV     R1,#0x0
+   \   000009   801A         SJMP    ??UartSend_String_0
+     32            {
+     33              U0DBUF = *Data++;
+   \                     ??UartSend_String_1:
+   \   00000B   8A82         MOV     DPL,R2
+   \   00000D   8B83         MOV     DPH,R3
+   \   00000F   E0           MOVX    A,@DPTR
+   \   000010   F5C1         MOV     0xc1,A
+   \   000012   A3           INC     DPTR
+   \   000013   AA82         MOV     R2,DPL
+   \   000015   AB83         MOV     R3,DPH
+     34              while(UTX0IF == 0);
+   \                     ??UartSend_String_2:
+   \   000017   A2E9         MOV     C,0xe8.1
+   \   000019   50FC         JNC     ??UartSend_String_2
+     35              UTX0IF = 0;
+   \   00001B   C2E9         CLR     0xe8.1
+     36            }
+   \   00001D   E8           MOV     A,R0
+   \   00001E   2401         ADD     A,#0x1
+   \   000020   08           INC     R0
+   \   000021   E9           MOV     A,R1
+   \   000022   3400         ADDC    A,#0x0
+   \   000024   F9           MOV     R1,A
+   \                     ??UartSend_String_0:
+   \   000025   C3           CLR     C
+   \   000026   E8           MOV     A,R0
+   \   000027   9C           SUBB    A,R4
+   \   000028   E9           MOV     A,R1
+   \   000029   9D           SUBB    A,R5
+   \   00002A   A2D2         MOV     C,0xD0 /* PSW */.2
+   \   00002C   65D0         XRL     A,PSW
+   \   00002E   33           RLC     A
+   \   00002F   40DA         JC      ??UartSend_String_1
+     37          }
+   \   000031   7F01         MOV     R7,#0x1
+   \   000033   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   000036                REQUIRE U0DBUF
+   \   000036                REQUIRE _A_IRCON2
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??UartInitial?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    UartInitial
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??UartSend?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    UartSend
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??UartSend_String?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    UartSend_String
+     38          
+
+   Maximum stack usage in bytes:
+
+     Function        ISTACK PSTACK XSTACK
+     --------        ------ ------ ------
+     UartInitial         0      0      0
+     UartSend            0      0      0
+     UartSend_String     0      0      9
+
+
+   Segment part sizes:
+
+     Function/Label          Bytes
+     --------------          -----
+     U0CSR                      1
+     U0DBUF                     1
+     U0BAUD                     1
+     U0GCR                      1
+     _A_IRCON2                  1
+     PERCFG                     1
+     P0SEL                      1
+     P2DIR                      1
+     UartInitial               21
+     ?Subroutine0               5
+     UartSend                   8
+     UartSend_String           54
+     ??UartInitial?relay        6
+     ??UartSend?relay           6
+     ??UartSend_String?relay    6
+
+ 
+ 88 bytes in segment BANKED_CODE
+ 18 bytes in segment BANK_RELAYS
+  8 bytes in segment SFR_AN
+ 
+ 106 bytes of CODE memory
+   0 bytes of DATA memory (+ 8 bytes shared)
+
+Errors: none
+Warnings: none
