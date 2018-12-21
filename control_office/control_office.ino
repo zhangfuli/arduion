@@ -6,11 +6,13 @@ Stepper stepper(STEPS, 8, 10, 9, 11);
 
 //记录蓝牙串口接收的数据
 String rec = "";
+String last = "";
 
 const int office2Btn = 5;
 const int office2Light = 4;
 int button2State = 0;
 bool on2off = LOW;
+bool state = LOW;
 
 const int office1Btn = 13;
 const int office1Light = 12;
@@ -26,29 +28,40 @@ void setup(){
   pinMode(office2Btn, INPUT);
   pinMode(office1Light, OUTPUT);
   pinMode(office1Btn, INPUT);
-  
+
+  attachInterrupt(0, blink, CHANGE);//当int.0电平改变时,触发中断函数blink
   stepper.setSpeed(500);
   stopFan();
  
 }
+void blink(){
+   state = !state;
+}
 void loop(){
-  while(Serial1.available() && rec.length()<7){
+  while(Serial1.available() && rec.length()<1){
     rec += char(Serial1.read());
-    delay(2);    
+    //delay(3);    
    // while(Serial1.available()){}
   }
+ 
   if(rec.length()>0){
     Serial.println(rec);
-    if(rec == "office1"){
-       digitalWrite(office1Light,HIGH);
+     if(last == rec){
+      rec = "";
+        return;  
+      }else if(last != rec){
+        last = rec;  
+      }
+    if(rec == "1"){
+       digitalWrite(office1Light,state);
        startFan();
        rotating();
-    }else if(rec == "office2"){
-      digitalWrite(office2Light,HIGH);
+    }else if(rec == "2"){
+      digitalWrite(office2Light,state);
       rotating();
    }else if(rec == "offic12"){
-     digitalWrite(office2Light,HIGH);
-     digitalWrite(office1Light,HIGH);
+     digitalWrite(office2Light,state);
+     digitalWrite(office1Light,state);
      startFan();
      rotating();
     }
